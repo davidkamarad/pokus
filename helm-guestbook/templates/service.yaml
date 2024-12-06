@@ -8,6 +8,8 @@ metadata:
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
 spec:
+  externalIPs:
+  - 192.168.102.170
   type: {{ .Values.service.type }}
   ports:
     - port: {{ .Values.service.port }}
