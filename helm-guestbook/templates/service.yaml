@@ -12,8 +12,8 @@ spec:
   - 10.136.38.11
   type: {{ .Values.service.type }}
   ports:
-    - port: {{ .Values.service.port }}
-      targetPort: http
+    - port: 80
+      targetPort: 8082
       protocol: TCP
       name: http
   selector:
