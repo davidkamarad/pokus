@@ -9,7 +9,7 @@ metadata:
     heritage: {{ .Release.Service }}
 spec:
   externalIPs:
-  - 192.168.102.170
+  - 10.136.38.11
   type: {{ .Values.service.type }}
   ports:
     - port: {{ .Values.service.port }}
