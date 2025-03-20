@@ -23,4 +23,4 @@ spec:
   tls:
     - hosts:
         - test.intedo.cz # Nahraďte svou doménou
-      secretName: servicedesk-tls  # Název tajného klíče pro certifikát Let's Encrypt
+      secretName: guestbook-tls  # Název tajného klíče pro certifikát Let's Encrypt
