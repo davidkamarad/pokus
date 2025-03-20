@@ -1,25 +1,25 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: guestbook-ui-ingress
-  namespace: default
+  name: guestbook-ingress
+  namespace: guestbook
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-prod"  # Určitý Issuer pro Let's Encrypt
     nginx.ingress.kubernetes.io/ssl-redirect: "true"  # Přesměrování HTTP na HTTPS
 spec:
   ingressClassName: nginx
   rules:
-    - host: guestbook.example.com  # Nahraďte svou doménou
+    - host: test.intedo.cz  # Nahraďte svou doménou
       http:
         paths:
-          - path: /
+          - path: /guestbook
             pathType: Prefix
             backend:
               service:
-                name: guestbook-ui-svc
+                name: guestbook-svc
                 port:
                   number: 80
   tls:
     - hosts:
-        - guestbook.example.com  # Nahraďte svou doménou
+        - test.intedo.cz # Nahraďte svou doménou
       secretName: servicedesk-tls  # Název tajného klíče pro certifikát Let's Encrypt
