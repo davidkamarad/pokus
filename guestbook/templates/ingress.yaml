@@ -7,6 +7,7 @@ metadata:
     cert-manager.io/cluster-issuer: "letsencrypt-prod"  # Určitý Issuer pro Let's Encrypt
     nginx.ingress.kubernetes.io/ssl-redirect: "true"  # Přesměrování HTTP na HTTPS
 spec:
+  ingressClassName: nginx
   rules:
     - host: guestbook.example.com  # Nahraďte svou doménou
       http:
