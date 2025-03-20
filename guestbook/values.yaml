@@ -1,0 +1,23 @@
+replicaCount: 1
+
+image:
+  repository: your-repository/guestbook-ui
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+service:
+  name: guestbook-ui
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: true
+  name: guestbook-ui-ingress
+  path: /
+  host: guestbook.example.com
+  tls:
+    - secretName: "servicedesk-tls"
+      hosts:
+        - guestbook.example.com
+
+resources: {}
