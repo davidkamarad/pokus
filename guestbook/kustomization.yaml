@@ -2,3 +2,19 @@ resources:
   - guestbook-ui-deployment.yaml
   - guestbook-ui-svc.yaml
   - guestbook-ui-ingress.yaml
+
+vars:
+  - name: HOST
+    objref:
+      kind: ConfigMap
+      name: my-config
+      apiVersion: v1
+    fieldref:
+      fieldpath: data.host
+  - name: PATH
+    objref:
+      kind: ConfigMap
+      name: my-config
+      apiVersion: v1
+    fieldref:
+      fieldpath: data.path
