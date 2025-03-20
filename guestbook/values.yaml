@@ -1,23 +1,23 @@
 replicaCount: 1
 
 image:
-  repository: your-repository/guestbook-ui
+  repository: https://github.com/DavidKamarad/pokus/guestbook
   pullPolicy: IfNotPresent
   tag: "latest"
 
 service:
-  name: guestbook-ui
+  name: guestbook
   type: ClusterIP
   port: 80
 
 ingress:
   enabled: true
-  name: guestbook-ui-ingress
+  name: guestbook-ingress
   path: /
-  host: guestbook.example.com
+  host: test.intedo.cz
   tls:
     - secretName: "servicedesk-tls"
       hosts:
-        - guestbook.example.com
+        - test.intedo.cz
 
 resources: {}
