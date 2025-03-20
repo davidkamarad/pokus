@@ -16,7 +16,7 @@ ingress:
   path: /guestbook
   host: test.intedo.cz
   tls:
-    - secretName: "servicedesk-tls"
+    - secretName: "guestbook-tls"
       hosts:
         - test.intedo.cz
 
