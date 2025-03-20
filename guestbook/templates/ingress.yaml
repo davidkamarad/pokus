@@ -4,7 +4,7 @@ metadata:
   name: guestbook-ingress
   namespace: guestbook
   annotations:
-    cert-manager.io/cluster-issuer: "letsencrypt-prod"  # Určitý Issuer pro Let's Encrypt
+   # cert-manager.io/cluster-issuer: "letsencrypt-prod"  # Určitý Issuer pro Let's Encrypt
     nginx.ingress.kubernetes.io/ssl-redirect: "true"  # Přesměrování HTTP na HTTPS
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
