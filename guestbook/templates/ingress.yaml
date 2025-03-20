@@ -16,7 +16,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: guestbook-svc
+                name: guestbook
                 port:
                   number: 80
   tls:
