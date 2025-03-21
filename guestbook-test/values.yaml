@@ -1,0 +1,23 @@
+replicaCount: 1
+
+image:
+  repository: https://github.com/DavidKamarad/pokus/guestbook
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+service:
+  name: guestbook
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: true
+  name: guestbook-ingress
+  path: /guestbook
+  host: test.intedo.cz
+  tls:
+    - secretName: "servicedesk-tls"
+      hosts:
+        - test.intedo.cz
+
+resources: {}
